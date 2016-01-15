@@ -41,7 +41,6 @@ int get_line(char s[], int lim)
 int reverse(char s[])
 {
 	int j,k, len; 
-	k = 0;
 	char temp[MAXLINE] = "\0"; /* Zero out memory before write */
 
 	// First loop, find length of string
@@ -50,8 +49,8 @@ int reverse(char s[])
 	len = j;
 
 	// Second loop, count backwards from string len
-	for(j = len; j > 0 ; j--)
-		temp[k++] = s[j-1]; /* Arrays start at index 0 */
+	for(j = len, k=0; j > 0 ; j--, k++)
+		temp[k] = s[j-1]; /* Arrays start at index 0 */
 
 	printf("%s\n",temp);
 }
