@@ -55,15 +55,10 @@ void entab(char s[])
 			{
 				putchar(TAB);
 			} 
-			
+
 		} else {
 			if (numSpaces > 0)
 			{
-				/*if (numSpaces % tabWidth == 0)
-				{
-					putchar(TAB);
-				}*/ 
-
 				for(k = 0; k < (numSpaces % tabWidth); k++)
 				{
 					putchar(SPACE);
