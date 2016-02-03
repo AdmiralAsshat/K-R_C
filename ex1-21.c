@@ -1,7 +1,7 @@
 #include <stdio.h>
 #define MAXLINE 1000		/* maximum input line size */
 #define TAB '\t'
-#define SPACE '#'
+#define SPACE ' '
 
 /* Exercise 1-21. Write a program entab that replaces strings of blanks by the
 minimum number of tabs and blanks to achieve the same spacing. Use the
@@ -50,17 +50,23 @@ void entab(char s[])
 		if (s[j] == ' ')
 		{
 			numSpaces++;
+
+			if (numSpaces % tabWidth == 0)
+			{
+				putchar(TAB);
+			} 
+			
 		} else {
 			if (numSpaces > 0)
 			{
-				if (numSpaces % tabWidth == 0)
+				/*if (numSpaces % tabWidth == 0)
 				{
 					putchar(TAB);
-				} else {
-					for(k = 0; k < numSpaces % tabWidth; k++)
-					{
-						putchar(SPACE);
-					}
+				}*/ 
+
+				for(k = 0; k < (numSpaces % tabWidth); k++)
+				{
+					putchar(SPACE);
 				}
 			}
 			// Reset string length
