@@ -37,11 +37,11 @@ int main(int argc, char const *argv[])
 	printf("Maximum value of long: %d\n", LONG_MAX);
 	printf("Maximum value of unsigned long: %d\n\n", (unsigned) ULONG_MAX);
 
-	/* Commented out because compiler does not like long long
+	 // Commented out because compiler does not like long long
 	printf("Minimum value of long long: %d\n", LONG_LONG_MIN);
 	printf("Maximum value of long long: %d\n", LONG_LONG_MAX);
 	printf("Maximum value of unsigned long long: %d\n", ULONG_LONG_MAX);
-	*/
+	
 
 	/*int junk;
 	printf("Fuck Windows. Press any key to close.");

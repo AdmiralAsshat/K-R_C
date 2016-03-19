@@ -7,6 +7,11 @@ digits (including an optional Ox or ox) into its equivalent integer value.
 The allowable digits are 0 through 9, a through f, and A through F.
 */
 
+/*TODO:
+- Handle '0X' and '0x' in string
+- Handle string input
+*/
+
 unsigned int htoi(const char s[]);
 
 int main(int argc, char const *argv[])
@@ -20,7 +25,7 @@ int main(int argc, char const *argv[])
 }
 
 
-unsigned int htoi(const char *s)
+unsigned int htoi(const char s[])
 /*{
 	int i, j = 0;
 
@@ -38,14 +43,20 @@ unsigned int htoi(const char *s)
 */
 {
 	unsigned int tot = 0;
-	for(int i=0; s[i]; i++)
+	for(int i=0; s[i] != '\0'; i++)
 	{
 		int val;
 		tot *= 16;
-		if(isdigit(s[i]))
+		if (tolower(s[i]) == 'x' && s[i-1] == '0')
+			continue;
+
+		if (s[i] == '0' && tolower(s[i+1]) == 'x')
+			continue;
+
+		if (isdigit(s[i]))
 			val = s[i] - '0';
 		else
-			val = 10 + (toupper(s[i]) - 'A');
+			val = 10 + (tolower(s[i]) - 'a');
 
 		tot += val;
 	}
