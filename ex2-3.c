@@ -7,10 +7,6 @@ digits (including an optional Ox or ox) into its equivalent integer value.
 The allowable digits are 0 through 9, a through f, and A through F.
 */
 
-/*TODO:
-- Handle string input
-*/
-
 unsigned int htoi(const char s[]);
 
 int main(int argc, char const *argv[])
@@ -25,12 +21,20 @@ int main(int argc, char const *argv[])
 	char *test3 = "0xAC";
 	char *test4 = "0XFF";
 	char *test5 = "0X99";
+	char *test6 = "123456";
+	char *test7 = "0x123456";
+	char *test8 = "F00";
+	char *test9 = "bar";
 
 	printf("Hex:%s; Decimal:%d\n", test1, htoi(test1));
 	printf("Hex:%s; Decimal:%d\n", test2, htoi(test2));
 	printf("Hex:%s; Decimal:%d\n", test3, htoi(test3));
 	printf("Hex:%s; Decimal:%d\n", test4, htoi(test4));
 	printf("Hex:%s; Decimal:%d\n", test5, htoi(test5));
+	printf("Hex:%s; Decimal:%d\n", test6, htoi(test6));
+	printf("Hex:%s; Decimal:%d\n", test7, htoi(test7));
+	printf("Hex:%s; Decimal:%d\n", test8, htoi(test8));
+	printf("Hex:%s; Decimal:%d\n", test9, htoi(test9));
 
 	return 0;
 }
